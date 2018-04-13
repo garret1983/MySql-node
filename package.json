@@ -1,0 +1,24 @@
+{
+  "name": "mysql-node",
+  "version": "1.0.0",
+  "description": "linking MySql and node.js",
+  "main": "bamazon_db.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garret1983/MySql-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garret1983/MySql-node/issues"
+  },
+  "homepage": "https://github.com/garret1983/MySql-node#readme",
+  "dependencies": {
+    "inquirer": "^5.2.0",
+    "request": "^2.85.0",
+    "table": "^4.0.3"
+  }
+}
