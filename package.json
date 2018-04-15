@@ -18,6 +18,7 @@
   "homepage": "https://github.com/garret1983/MySql-node#readme",
   "dependencies": {
     "inquirer": "^5.2.0",
+    "mysql": "^2.15.0",
     "request": "^2.85.0",
     "table": "^4.0.3"
   }

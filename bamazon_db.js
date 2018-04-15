@@ -20,11 +20,11 @@ connection.connect(function (error) {
 function displayProducts() {
     connection.query("SELECT*FROM products", function (error, results) {
         if (error) throw error;
-        console.log("\n----------Bamazon Products----------\n");
+        console.log("\n----------Available Products----------\n");
         for (var i = 0; i < results.length; i++) {
             console.log("Product ID: " + results[i].item_id + " || Product: " + results[i].product_name + " || Dapartment: " + results[i].department + " || Price: " + results[i].price + " || In Stock: " + results[i].quantity);
         }
-        console.log("--------Bamazon Products--------\n");
+        console.log("\n--------End Products--------\n");
         chooseProducts(results);
     });
 };
@@ -67,7 +67,8 @@ var chooseProducts = function (results) {
             var newQuantity = res[0].quantity - answer.quantity
             console.log(newQuantity);
             if (newQuantity >= 0) {
-                connection.query("UPDATE products SET stock_quantity = '" + newStockQuantity + "'WHERE item_id = '" + answer.productChoice + "'", function (error, results2) {
+                connection.query("UPDATE products SET quantity = " + newQuantity + " WHERE item_id = " + answer.productChoice, function (error, results2) {
+                    if (error) throw error
                     console.log("Product Bought!");
                     areYouDone();
                 })
@@ -80,7 +81,7 @@ var chooseProducts = function (results) {
 }
 
 function areYouDone() {
-    inquirer.promp([{
+    inquirer.prompt([{
         name: "userDone",
         type: "list",
         message: "\nWhat would you like to do now?",
@@ -89,7 +90,7 @@ function areYouDone() {
         if (finalAnswer.userDone === "purchase another item") {
             displayProducts();
         } else {
-            console.log("\nThnk you for your business!");
+            console.log("\nThank you for your business!");
             process.exit();
         }
     })
