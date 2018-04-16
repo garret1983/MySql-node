@@ -74,7 +74,7 @@ var chooseProducts = function (results) {
                 })
             } else {
                 console.log("\nSorry, there is not enough in stock. Please choose another quantity or product.\n");
-                chooseProduct();
+                //chooseProduct();
             }
         })
     });
@@ -95,4 +95,5 @@ function areYouDone() {
         }
     })
 }
-
+            
+            
