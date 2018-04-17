@@ -13,7 +13,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function (error) {
     if (error) throw error;
-    console.log("connected as id " + connection.threadId);
+    //console.log("connected as id " + connection.threadId);
     displayProducts();
 })
 
@@ -74,7 +74,7 @@ var chooseProducts = function (results) {
                 })
             } else {
                 console.log("\nSorry, there is not enough in stock. Please choose another quantity or product.\n");
-                //chooseProduct();
+                chooseProduct();
             }
         })
     });
@@ -95,5 +95,6 @@ function areYouDone() {
         }
     })
 }
-            
-            
+
+
+
